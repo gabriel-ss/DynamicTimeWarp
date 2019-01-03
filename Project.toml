@@ -1,0 +1,4 @@
+name = "DynamicTimeWarp"
+uuid = "98632d24-0e1b-11e9-3f13-a980199f5ec5"
+authors = ["Gabriel Silveira <gabriel.silveira@poli.ufrj.br>"]
+version = "0.1.0"
