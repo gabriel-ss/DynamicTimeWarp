@@ -133,7 +133,9 @@ function linkseq(sequence1::AbstractArray, sequence2::AbstractArray, sr=1, nofli
 	path1, path2 = dtw(sequence1, sequence2)
 
 	# Recreate the original independent axis
-	t = range(0; step=1/sr, length=length(sequence2))
+	len1 = size(sequence1)[end]
+	len2 = size(sequence2)[end]
+	t = range(0; step=1/sr, length=max(len1, len2))
 
 	links = 1 : (noflinks == 0 ? 1 : (length(path1) ÷ noflinks)) : length(path1)
 
