@@ -2,7 +2,10 @@ module DynamicTimeWarp
 
 
 """
-    dtw(sequence1, sequence2) -> (path1, path2, cost)
+    dtw(
+        sequence1, sequence2,
+        dist=(a, b)->(a - b)'*(a - b)
+    ) -> (path1, path2, cost)
 
 Compute the set of indices `path1, path2` that give the alignment of two
 sequences over their last dimension by dynamic time warping.
@@ -68,7 +71,7 @@ end
 """
     trackback(cost::AbstractMatrix) -> (path1, path2)
 
-Compute the lowest cost path from an cost array. Returns two vectors
+Compute the lowest cost path from a cost array. Returns two vectors
 representing the path.
 """
 function trackback(cost::AbstractMatrix)
